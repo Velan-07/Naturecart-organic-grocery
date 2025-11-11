@@ -1,0 +1,38 @@
+
+/* Minimal base plus some custom utilities */
+:root{ --nc-green: #16a34a; --nc-olive:#2f7a3e; --muted:#6b7280 }
+*{box-sizing:border-box} body{background:linear-gradient(180deg,#f7faf7,white);min-height:100vh;color:#0f172a;margin:0;padding:0}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+/* small helper for skeleton */
+.skeleton{background:linear-gradient(90deg,#eef2e9,#f6faf6,#eef2e9);background-size:200% 100%;animation:shimmer 1.4s linear infinite;border-radius:8px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+
+
+/* ---- NatureCart custom styles ---- */
+:root{--emerald:#10b981; --bg:#f7f9f8; --card:#ffffff}
+body{font-family:'Poppins',system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:#0f172a}
+
+/* Navbar glass + glow */
+.navbar-glow{backdrop-filter: blur(6px); background: rgba(16,185,129,0.06); box-shadow:0 6px 18px rgba(2,6,23,0.06); border-bottom:1px solid rgba(16,185,129,0.08); transition:all .3s ease}
+
+/* Product card hover */
+.product-card{transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease}
+.product-card:hover{transform:translateY(-6px) scale(1.01); box-shadow:0 10px 30px rgba(2,6,23,0.08)}
+
+/* Preloader */
+#preloader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,1),rgba(247,249,248,0.95));z-index:9999}
+.leaf{width:64px;height:64px;display:block;animation:leafspin 1s linear infinite;background-image:url('/src/assets/fallback.jpg');background-size:cover;border-radius:50%}
+@keyframes leafspin{0%{transform:rotate(0)}50%{transform:rotate(180deg) scale(.9)}100%{transform:rotate(360deg)}}
+
+/* Scroll top button */
+#scrollTop{position:fixed;right:18px;bottom:24px;background:var(--emerald);color:white;padding:10px;border-radius:999px;box-shadow:0 6px 18px rgba(2,6,23,0.12);display:none;z-index:80;cursor:pointer}
+#scrollTop.show{display:block;transform:translateY(0);transition:all .28s ease}
+
+/* Image subtle fade */
+.img-fade{opacity:0;transform:translateY(6px);transition:opacity .6s ease, transform .6s ease}
+.img-loaded.img-fade{opacity:1;transform:translateY(0)}
+
+/* Responsive tweaks */
+@media (max-width:640px){ .nav-links{display:none} .mobile-only{display:inline-flex} }
